@@ -14,13 +14,14 @@ jobs:
     unit_testing:
         strategy:
           matrix:
-            nodejs_versions: [18, 18, 20]
+            nodejs_versions: [18, 19, 20]
             os: [ubuntu-latest, macos-latest]
             exclude:
               - nodejs_versions: 18
                 os: macos-latest
-        name: apply unit test on code
 
+        
+        name: apply unit test on code
         runs-on: ${{matrix.os}}
         steps:
         - name: Checkout the Repository
